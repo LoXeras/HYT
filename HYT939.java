@@ -46,6 +46,8 @@ public class HYT939
 		String s_humidity = Double.toString(humidity);
 		String s_temp = Double.toString(cTemp);
 		String id = "1";
+		
+		System.out.printf("TEST");
 			
 
 		String query = String.format("t=%s&h=%s&i=%s", 
