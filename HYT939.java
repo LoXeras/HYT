@@ -33,7 +33,8 @@ public class HYT939
 		// Convert the data to 14-bits
 		//double humidity = (((data[0] & 0x3F) * 256) + (data[1] & 0xFF)) * (100.0 / 16383.0);
 		//double cTemp = ((((data[2] & 0xFF) * 256) + (data[3] & 0xFC)) / 4) * (165.0 / 16383.0) - 40;
-		//double fTemp = (cTemp * 1.8 ) + 32;
+		double cTemp = 15;
+		double humidity = 19;
 
 		// Output data to screen
 		//System.out.printf("Relative Humidity is : %.2f %%RH %n", humidity);
@@ -42,21 +43,20 @@ public class HYT939
 		
 		String url = "http://loxeras.com/api/insert.php";
 		String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
-		String param1 = "1";
-		String param2 = "2";
-		String param3 = "3";
+		String s_humidity = Double.toString(humidity);
+		String s_temp = Double.toString(cTemp);
+		String id = "1";
 			
 
 		String query = String.format("t=%s&h=%s&i=%s", 
-		URLEncoder.encode(param1, charset), 
-		URLEncoder.encode(param2, charset),
-		URLEncoder.encode(param3, charset));
+		URLEncoder.encode(s_temp, charset), 
+		URLEncoder.encode(s_humidity, charset),
+		URLEncoder.encode(id, charset));
 		
 		URLConnection connection = new URL(url + "?" + query).openConnection();
 		connection.setRequestProperty("Accept-Charset", charset);
 		InputStream response = connection.getInputStream();
-		
-		InputStream response = new URL(url).openStream();
+
 
 		
 		
