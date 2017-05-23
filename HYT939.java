@@ -9,6 +9,17 @@ import com.pi4j.io.i2c.I2CDevice;
 import com.pi4j.io.i2c.I2CFactory;
 import java.io.IOException;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public class HYT939
 {
 	public static void main(String args[]) throws Exception
@@ -42,7 +53,7 @@ public class HYT939
 		String param1 = "1";
 		String param2 = "2";
 		String param3 = "3";
-			// ...
+			
 
 		String query = String.format("t=%s&h=%s&i=%s", 
 		URLEncoder.encode(param1, charset), 
