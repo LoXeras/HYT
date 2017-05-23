@@ -4,21 +4,17 @@
 // This code is designed to work with the HYT939_I2CS I2C Mini Module available from ControlEverything.com.
 // https://www.controleverything.com/content/Humidity?sku=HYT939_I2CS#tabs-0-product_tabset-2
 
-import com.pi4j.io.i2c.I2CBus;
-import com.pi4j.io.i2c.I2CDevice;
-import com.pi4j.io.i2c.I2CFactory;
-import java.io.IOException;
+//import com.pi4j.io.i2c.I2CBus;
+//import com.pi4j.io.i2c.I2CDevice;
+//import com.pi4j.io.i2c.I2CFactory;
+//import java.io.IOException;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 public class HYT939
 {
