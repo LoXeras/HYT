@@ -26,7 +26,7 @@ public class HYT939
 		Thread.sleep(500);
 
 		// Read 4 bytes of data
-		humidity msb, humidity lsb, temp msb, temp lsb
+		//humidity msb, humidity lsb, temp msb, temp lsb
 		byte[] data = new byte[4];
 		device.read(data,0,4);
 
