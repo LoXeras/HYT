@@ -18,7 +18,7 @@ public class HYT939
 	{
 		// Create I2CBus
 		I2CBus bus = I2CFactory.getInstance(I2CBus.BUS_1);
-		Get I2C device, HYT939 I2C address is 0x28(40)
+		//Get I2C device, HYT939 I2C address is 0x28(40)
 		I2CDevice device = bus.getDevice(0x28);
 
 		// Send normal mode command 
