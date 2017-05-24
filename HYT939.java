@@ -34,7 +34,8 @@ public class HYT939
 		double humidity = (((data[0] & 0x3F) * 256) + (data[1] & 0xFF)) * (100.0 / 16383.0);
 		double cTemp = ((((data[2] & 0xFF) * 256) + (data[3] & 0xFC)) / 4) * (165.0 / 16383.0) - 40;
 		
-
+		
+		
 		// Output data to screen
 		System.out.printf("Relative Humidity is : %.2f %%RH %n", humidity);
 		System.out.printf("Temperature in Celsius is : %.2f C %n", cTemp);
