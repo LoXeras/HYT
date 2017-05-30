@@ -21,11 +21,11 @@ public class HYT939
 		//Get I2C device, HYT939 I2C address is 0x28(40)
 		I2CDevice device = bus.getDevice(0x28);
 
-		// Send normal mode command 
+		//Send normal mode command 
 		device.write((byte)0x80);
 		Thread.sleep(500);
 
-		// Read 4 bytes of data
+		//Read 4 bytes of data
 		//humidity msb, humidity lsb, temp msb, temp lsb
 		byte[] data = new byte[4];
 		device.read(data,0,4);
