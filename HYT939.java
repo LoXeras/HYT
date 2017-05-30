@@ -10,6 +10,7 @@ import com.pi4j.io.i2c.I2CFactory;
 
 import java.net.*;
 import java.io.*;
+import java.text.*
 
 
 public class HYT939
@@ -31,6 +32,8 @@ public class HYT939
 		device.read(data,0,4);
 
 		// Convert the data to 14-bits
+		
+		DecimalFormat df = new DecimalFormat("##.##");
 		double humidity = (((data[0] & 0x3F) * 256) + (data[1] & 0xFF)) * (100.0 / 16383.0);
 		double cTemp = ((((data[2] & 0xFF) * 256) + (data[3] & 0xFC)) / 4) * (165.0 / 16383.0) - 40;
 		
@@ -43,8 +46,8 @@ public class HYT939
 		
 		String url = "http://loxeras.com/api/insert.php";
 		String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
-		String s_humidity = Double.toString(humidity);
-		String s_temp = Double.toString(cTemp);
+		String s_humidity = Double.toString(df.format(humidity));
+		String s_temp = Double.toString(df.format(cTemp));
 		String id = "1";
 		
 		System.out.printf("TEST");
