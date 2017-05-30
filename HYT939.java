@@ -47,11 +47,6 @@ public class HYT939
 		String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
 		String s_humidity = Double.toString(humidity);
 		String s_temp = Double.toString(cTemp);
-		s_humidity = String.format("%.2f", s_humidity);
-		s_temp = String.format("%.2f", s_temp);
-
-		
-		
 		String id = "1";
 					
 
