@@ -25,6 +25,8 @@ public class HYT939
 		device.write((byte)0x80);
 		Thread.sleep(500);
 
+		
+		while(1){
 		//Read 4 bytes of data
 		//humidity msb, humidity lsb, temp msb, temp lsb
 		byte[] data = new byte[4];
@@ -58,8 +60,8 @@ public class HYT939
 		URLConnection connection = new URL(url + "?" + query).openConnection();
 		connection.setRequestProperty("Accept-Charset", charset);
 		InputStream response = connection.getInputStream();
-
-
+		Thread.sleep(30000);
+		}
 		
 		
 		
